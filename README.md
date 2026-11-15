@@ -1,47 +1,43 @@
 # PokéHub
 
-Open-source community hub for Pokémon-related homebrew projects, ROM-hack patches, emulators, save utilities, and ROM development tools.
+Open-source Android hub for Pokémon-related homebrew projects, authorized ROM-hack patches, emulators, save utilities, and development tools.
 
-## Current status
+## Current development status
 
-**Alpha 0.1.0 — Android app shell in development.**
+**Alpha 0.2 — core platform foundations are being implemented.**
 
-The current app includes:
-- Home, Explore, Library, and Profile navigation
-- Search and category filters
-- Catalog item detail pages
-- Session-only favorites
-- Clearly labeled demonstration catalog entries
+Implemented in source:
+- Kotlin + Jetpack Compose Android app shell
+- Room entities and DAO for catalog, favorites, independent repositories, downloads, and publisher drafts
+- HTTPS repository index parser and synchronization service
+- WorkManager download queue worker with optional SHA-256 integrity verification
+- Developer metadata validation and JSON repository index generator
+- Unit tests for repository index and publisher validation
 
-The catalog is still demonstration data. Downloads, accounts, repository syncing, and persistent favorites are not implemented yet. No APK is being published until the modules are integrated and tested.
+Not yet verified:
+- The Android project has not been built or tested in this environment.
+- The new data services still need full integration into the Compose user interface.
+- There is no production catalog endpoint configured by default.
+- No APK is being claimed or distributed.
 
-## Technology
+## Stack
+Kotlin, Android SDK, Jetpack Compose, Material 3, Room, OkHttp, WorkManager, Gradle.
 
-- Kotlin
-- Android SDK
-- Jetpack Compose
-- Material 3
-- Gradle
+## Repository structure
+- app/ — Android application and platform services
+- core/ — shared domain logic (planned)
+- repository/ — repository specifications and integrations
+- metadata/ — catalog metadata
+- assets/ — project assets
+- docs/ — documentation
+- scripts/ — development scripts
+- tests/ — additional tests
 
-## Project structure
-
-- `app/` — Android application
-- `core/` — shared models and application logic (planned)
-- `repository/` — catalog and repository integrations (planned)
-- `metadata/` — catalog metadata and schemas
-- `assets/` — project assets
-- `docs/` — documentation and roadmap
-- `scripts/` — development scripts
-- `tests/` — automated tests
-
-## Roadmap
-
-See [docs/ROADMAP.md](docs/ROADMAP.md).
+## Repository index
+See docs/ROADMAP.md for schema v1 and roadmap.
 
 ## Legal distribution policy
-
-PokéHub focuses on homebrew, original fan projects, development tools, emulators, and legally shareable patches. It will not host or distribute commercial copyrighted ROM files. ROM hacks should use patch distribution wherever possible.
+PokéHub may catalog and distribute homebrew, original projects, tools, emulators, and authorized patches. It must not host commercial copyrighted Pokémon ROM files. Prefer patch distribution and require users to provide their own legally obtained game files.
 
 ## License
-
 To be defined.
